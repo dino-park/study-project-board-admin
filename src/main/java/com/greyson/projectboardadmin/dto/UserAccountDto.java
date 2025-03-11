@@ -1,17 +1,14 @@
 package com.greyson.projectboardadmin.dto;
 
 import com.greyson.projectboardadmin.domain.AdminAccount;
-import com.greyson.projectboardadmin.domain.constant.RoleType;
 
 import java.time.LocalDateTime;
-import java.util.Set;
 
 /**
  * DTO for {@link AdminAccount}
  */
 public record UserAccountDto(
         String userId,
-        Set<RoleType> roleTypes,
         String email,
         String nickname,
         String memo,
@@ -20,14 +17,12 @@ public record UserAccountDto(
         LocalDateTime modifiedAt,
         String modifiedBy) {
 
-    public static UserAccountDto of(String userId, Set<RoleType> roleTypes,
-                                    String email, String nickname, String memo) {
-        return UserAccountDto.of(userId, roleTypes, email, nickname, memo, null, null, null, null);
+    public static UserAccountDto of(String userId, String email, String nickname, String memo) {
+        return UserAccountDto.of(userId, email, nickname, memo, null, null, null, null);
     }
 
-    public static UserAccountDto of(String userId, Set<RoleType> roleTypes,
-                                    String email, String nickname, String memo, LocalDateTime createdAt, LocalDateTime modifiedAt,
+    public static UserAccountDto of(String userId, String email, String nickname, String memo, LocalDateTime createdAt, LocalDateTime modifiedAt,
                                     String createdBy, String modifiedBy) {
-        return new UserAccountDto(userId, roleTypes, email, nickname, memo, createdAt, createdBy, modifiedAt, modifiedBy);
+        return new UserAccountDto(userId, email, nickname, memo, createdAt, createdBy, modifiedAt, modifiedBy);
     }
 }

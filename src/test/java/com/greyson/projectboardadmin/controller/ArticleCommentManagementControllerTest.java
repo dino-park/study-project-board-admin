@@ -1,9 +1,7 @@
 package com.greyson.projectboardadmin.controller;
 
 import com.greyson.projectboardadmin.config.SecurityConfig;
-import com.greyson.projectboardadmin.domain.constant.RoleType;
 import com.greyson.projectboardadmin.dto.ArticleCommentDto;
-import com.greyson.projectboardadmin.dto.ArticleDto;
 import com.greyson.projectboardadmin.dto.UserAccountDto;
 import com.greyson.projectboardadmin.service.ArticleCommentManagementService;
 import org.junit.jupiter.api.DisplayName;
@@ -17,11 +15,8 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.BDDMockito.*;
-import static org.mockito.BDDMockito.then;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -107,7 +102,6 @@ class ArticleCommentManagementControllerTest {
     private UserAccountDto createUserAccountDto() {
         return UserAccountDto.of(
                 "unoTest",
-                Set.of(RoleType.ADMIN),
                 "uno-test@email.com",
                 "uno-test",
                 "test memo"

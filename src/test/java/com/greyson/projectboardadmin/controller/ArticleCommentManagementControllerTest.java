@@ -1,6 +1,6 @@
 package com.greyson.projectboardadmin.controller;
 
-import com.greyson.projectboardadmin.config.SecurityConfig;
+import com.greyson.projectboardadmin.config.TestSecurityConfig;
 import com.greyson.projectboardadmin.dto.ArticleCommentDto;
 import com.greyson.projectboardadmin.dto.UserAccountDto;
 import com.greyson.projectboardadmin.service.ArticleCommentManagementService;
@@ -23,7 +23,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @DisplayName("컨트롤러 - 댓글 관리")
-@Import(SecurityConfig.class)
+@Import(TestSecurityConfig.class)
 @WebMvcTest(ArticleCommentManagementController.class)
 class ArticleCommentManagementControllerTest {
 

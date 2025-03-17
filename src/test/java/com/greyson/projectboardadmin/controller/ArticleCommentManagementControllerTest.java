@@ -52,6 +52,7 @@ class ArticleCommentManagementControllerTest {
     }
 
     @WithMockUser(username = "tester", roles = "USER")
+
     @DisplayName("[data][GET] 댓글 1개 - 정상 호출")
     @Test
     void givenCommentId_whenRequestingArticleComment_thenReturnsArticleComment() throws Exception {
@@ -71,6 +72,7 @@ class ArticleCommentManagementControllerTest {
     }
 
     @WithMockUser(username = "tester", roles = "MANAGER")
+
 
     @DisplayName("[view][POST] 댓글 삭제 - 정상 호출")
     @Test

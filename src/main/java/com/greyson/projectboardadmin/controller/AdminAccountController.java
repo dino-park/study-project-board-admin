@@ -5,6 +5,7 @@ import com.greyson.projectboardadmin.service.AdminAccountService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
+
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,6 +18,7 @@ public class AdminAccountController {
 
     @GetMapping("/admin/members")
     public String members() {
+
         return "admin/members";
     }
 
@@ -26,6 +28,7 @@ public class AdminAccountController {
         return adminAccountService.users().stream()
                 .map(AdminAccountResponse::from)
                 .toList();
+
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
@@ -33,6 +36,7 @@ public class AdminAccountController {
     @DeleteMapping("/api/admin/members/{userId}")
     public void delete(@PathVariable String userId) {
         adminAccountService.deleteUser(userId);
+
     }
 
 }

@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
+
 @RequiredArgsConstructor
 @Service
 public class ArticleCommentManagementService {
@@ -48,6 +49,7 @@ public class ArticleCommentManagementService {
                 .build()
                 .toUri();
         restTemplate.delete(uri);
+
     }
 
 }

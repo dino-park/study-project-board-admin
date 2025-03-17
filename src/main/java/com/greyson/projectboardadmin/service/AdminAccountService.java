@@ -45,14 +45,7 @@ public class AdminAccountService {
 
     public void deleteUser(String username) {
         adminAccountRepository.deleteById(username);
-        return null;
-    }
-
-    public List<AdminAccountDto> users() {
-        return List.of();
-    }
-
-    public void deleteUser(String username) {
 
     }
+
 }

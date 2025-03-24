@@ -1,5 +1,6 @@
 package com.greyson.projectboardadmin.controller;
 
+import com.greyson.projectboardadmin.config.GlobalControllerConfig;
 import com.greyson.projectboardadmin.config.TestSecurityConfig;
 import com.greyson.projectboardadmin.dto.ArticleDto;
 import com.greyson.projectboardadmin.dto.UserAccountDto;
@@ -24,7 +25,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @DisplayName("View 컨트롤러 - 게시글 관리")
-@Import(TestSecurityConfig.class)
+@Import({TestSecurityConfig.class, GlobalControllerConfig.class})
 @WebMvcTest(ArticleManagementController.class)
 class ArticleManagementControllerTest {
 
